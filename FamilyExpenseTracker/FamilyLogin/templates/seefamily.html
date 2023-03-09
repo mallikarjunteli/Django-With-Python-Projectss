@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<h2 align="center">Family member details</h2>
+<table border="2" align="center">
+  <tr>
+      <td>FirstName</td>
+      <td>Lastname</td>
+      <td>Income</td>
+      <td>Update</td>
+      <td>Delete</td>
+  </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.firstname }}</td>
+        <td> {{ i.lastname }}</td>
+        <td>{{ i.income }}</td>
+        <td>
+            <a href="{% url 'update' i.id %}">Update</a>
+        </td>
+        <td>
+            <a href="{% url 'delete' i.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock%}

@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <input class="form-control form-control-lg" type="text" placeholder="First Name" name="firstname" value="{{ data.firstname }}">
+            <input class="form-control form-control-lg" type="text" placeholder="Last name" name="lastname" value="{{ data.lastname }}">
+            <input class="form-control form-control-lg" type="number" placeholder="Income" name="income" value="{{ data.income }}" min="0" >
+            <input type="submit" value="Update Family Member" class="btn btn-primary btn-lg btn-block">
+        </form>
+</div>
+
+{% endblock %}

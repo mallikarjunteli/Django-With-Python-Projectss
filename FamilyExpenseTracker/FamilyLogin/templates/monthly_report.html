@@ -1,0 +1,50 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<div class="container toppart">
+        <form class="form-inline" action="getmonthlyrecords" method="post">
+            {% csrf_token %}
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref1">Year</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref1" name="year">
+                 <option selected>{{start_year}}</option>
+                {% for year in years %}
+                <option value="{{year}}">{{year}}</option>
+                {% endfor %}
+            </select>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Month</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="month">
+                 <option selected>{{start_month}}</option>
+                {% for month in months %}
+                <option value="{{month}}">{{month}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" class="btn btn-primary my-1 mr-2" value="Filter">
+        </form>
+        <div class="bottomtab">
+            <table class="table">
+                <thead class="thead-primary">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in records %}
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.purpose}}</td>
+                        <td>{{i.expense}}</td>
+                        <td>{{i.date}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h4>{{norecords}}</h4>
+
+        </div>
+    </div>
+
+{% endblock %}

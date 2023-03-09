@@ -1,0 +1,22 @@
+h2{
+color:#189AB4;
+font-size:45px;
+}
+a{
+    width:50%;
+    align:center;
+}
+.bg
+{
+    padding:20px;
+    background:url('/images/bg.jpg');
+    background-size:cover;
+}
+.img{
+    padding:250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:350px;
+    height:100px;
+}

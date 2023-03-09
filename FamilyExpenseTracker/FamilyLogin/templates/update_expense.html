@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+ <div class="container">
+        <form  method="post">
+            {% csrf_token %}
+            <select class="custom-select paddown" name="name">
+                <!--            <option selected>Open this select menu</option>-->
+                {% for i in data %}
+                <option value="{{i.firstname }}">{{ i.firstname }}</option>
+                {% endfor %}
+            </select>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Purpose" name="purpose" value="{{ x.purpose }}" required>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Expense" name="expense"
+                    value="{{ x.expense }}" required>
+            </div>
+            <div class="form-group">
+                <input type="Date" class="form-control" placeholder="Date" name="date"
+                    value="{{ x.date|date:'Y-m-d' }}" required>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Update Expense">
+        </form>
+    </div>
+
+{% endblock %}

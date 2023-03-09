@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% block content %}
+{% load static %}
+<body style="background:url('static/images/addmember.jpg');
+            background-size:cover;background-attachment:fixed;
+  background-position:center;">
+<h1 align="center">Add Member</h1>
+<link href="{% static 'css/add_member.css' %}" rel="stylesheet">
+{% if null %}
+    <p>please enter income</p>
+{% endif %}
+<form action="addingmember" method="post">
+     {%csrf_token %}
+     <table align="center">
+         <tr>
+             <td>
+                 <input class="form-control form-control-lg" type="text" placeholder="First Name" name="firstname">
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <input class="form-control form-control-lg" type="text" placeholder="Last name" name="lastname">
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 <input class="form-control form-control-lg" type="number" placeholder="Income" name="income">
+             </td>
+         </tr>
+         <tr>
+             <td>
+                  <input type="submit" value="Add To Family Members" class="btn btn-primary btn-lg btn-block">
+             </td>
+         </tr>
+     </table>
+</form>
+</body>
+{% endblock%}

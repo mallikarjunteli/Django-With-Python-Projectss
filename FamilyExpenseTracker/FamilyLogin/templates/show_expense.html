@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<div class="row">
+        <div class="col-sm-8 col-md-12">
+            <h2>Exepense details are below</h2>
+            <table class="table ">
+                <thead class="table table-dark">
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Purpose</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Remove</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                {% for i in x %}
+                <tr>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.purpose }}</td>
+                    <td>{{ i.expense }}</td>
+                    <td>{{ i.date }}</td>
+                    <td><a href="{% url 'updateExpenses' i.id %}" class="btn btn-primary">Update</a></td>
+                    <td><a href="{% url 'deleteExpenses' i.id %}" class="btn btn-danger">Delete</a></td>
+
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+</div>
+{% endblock %}

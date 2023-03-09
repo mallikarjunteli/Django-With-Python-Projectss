@@ -1,0 +1,20 @@
+body{
+    background:url('/static/images/register.jpg');
+    background-size:1370px,200px;
+    background-repeat:no-repeat;
+    color:#BF1363;
+    padding:200px;
+    font-size:larger;
+}
+div{
+    border:5px;
+    border-color:white;
+    box-sizing: border-box;
+    border-radius:20px;
+    border-style: solid;
+    width:50%;
+    float:left;
+    margin-left:250px;
+    color:#F5E6CA;
+    background-color:#FB9300;
+}

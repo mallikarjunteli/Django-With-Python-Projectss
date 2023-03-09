@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<form action="totalexpense" method="post">
+    {% csrf_token %}
+    <h1>Monthly Total expense</h1>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref1">Year</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref1" name="year">
+                 <option selected>{{start_year}}</option>
+                {% for year in years %}
+                <option value="{{year}}">{{year}}</option>
+                {% endfor %}
+            </select>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Month</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="month">
+                 <option selected>{{start_month}}</option>
+                {% for month in months %}
+                <option value="{{month}}">{{month}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" class="btn btn-primary my-1 mr-2" value="Filter">
+    <div>
+       <h1 style="color:blue">Total expense in this month is ---- {{ total_expense }}</h1>
+        <h1 style="color:blue">Yearly expense is---{{ year_total }}</h1>
+    </div>
+</form>
+
+{% endblock %}

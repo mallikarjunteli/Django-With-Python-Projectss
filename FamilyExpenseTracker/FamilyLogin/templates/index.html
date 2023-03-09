@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static '/css/index.css' %}" rel="stylesheet">
+<body class="bg" style="background:url('static/images/bg.jpg');  background-size:cover;">
+<h2 align="center">Welcome to Family Expense Tracker management</h2>
+
+<a href="{% url 'loginpage' %}" class="btn btn-primary btn-lg btn-block" align="center">
+    <img class='img' src="{% static '/images/getstarted.png' %}">
+</a>
+
+</body>
+{% endblock %}
+

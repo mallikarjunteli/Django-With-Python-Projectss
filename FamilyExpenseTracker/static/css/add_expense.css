@@ -1,0 +1,9 @@
+body{
+background:url('static/images/coins.jpg');
+}
+.container{
+    margin-top:40px;
+}
+.form-group{
+    margin-top:12px;
+}

@@ -1,0 +1,16 @@
+.bd{
+    color:black;
+    font-size:25px;
+    background:url('/images/login.jpg');
+    background-repeat:no repeat;
+    background-size:cover;
+    padding:200px;
+    color:black;
+}
+input[type=submit]{
+    width:100px;
+    height:40px;
+    font-size:25px;
+    color:White;
+    background-color:#4C5270;
+}
