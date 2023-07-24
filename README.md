@@ -1,2 +1,2 @@
-# family-Expense-Tracker
-Django project with Python
+# Django with Python Project
+Family-Expense-Tracker
